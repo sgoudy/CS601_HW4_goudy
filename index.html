@@ -9,37 +9,32 @@
     <title>Shelby Goudy</title>
 </head>
 <body>
-    <header class="mx">
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="pages/skills.html">Skills</a>
-            <a href="pages/about.html">About</a>
-            <a href="pages/contact.html">Contact</a>
-        </nav>
-    </header>
     <section class="container">
         <header class="leftSidebar">
-            <h1>Shelby 'EVA' Goudy </h1>
-            <h2> MBA, MSSD</h2>
-            <hr>
-            <nav class="nav">
+            <div id="name-title">
+                <h1>Shelby 'EVA' Goudy </h1>
+                <h2> MBA, MSSD</h2>
+                <hr>
+            </div>
+            
+            <nav>
                 <a href="index.html">Home</a>
                 <a href="pages/skills.html">Skills</a>
+                <a href="pages/portfolio.html">Portfolio</a>
                 <a href="pages/about.html">About</a>
                 <a href="pages/contact.html">Contact</a>
             </nav>
         </header>
     <section class="right">
+        <button onclick=startProgram() >Start the Calculator & Customizer!</button>
         <figure>
             <img src="images/hiking.jpg" alt="Shelby on the left, Joey her red heeler in the middle, and Kevin on the right. Sitting on a snow covered log in the woods." >
             <figcaption>
                 Shelby, Joey (red heeler), and Kevin in the Laurel Mountains.
             </figcaption>
         </figure>
-        
         <hr>
-        
-            <h2>Welcome to my Round Pen</h2>
+            <h2 id="heading"></h2>
             <p>
                 *** SEEKING REMOTE OPPORTUNITIES in Aviation or Automotive ***
             </p>
@@ -54,7 +49,7 @@
             <h3>Take a look around!</h3>
     </section>
     </section>
-    <footer class="footer">
+    <footer>
       <span>
         <a href="https://www.linkedin.com/in/shelby-goudy/" target="_blank">
             <img src="images/linkedin.png" height="30" alt="linkedIn logo">
@@ -65,5 +60,6 @@
       </span>
       <p>&copy; Shelby 2021</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

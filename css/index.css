@@ -18,14 +18,14 @@ h2{
     font-size: 28px;
 }
 
-p,a{
+p, a, button{
     font-size: 20px;
     text-decoration: none;
     color: lightgray;
     line-height: 1.7;
 }
 
-.nav a {
+nav > a, button, .resume {
     text-transform: uppercase;
     text-decoration: none;
     background-color: black;
@@ -36,14 +36,27 @@ p,a{
     text-align: center;
 }
 
-a:visited{
+a:visited, button:visited{
     color: lightblue;
 }
 
-a:hover{
+a:hover, button:hover{
     color: gold;
     transform: rotate(1deg);
     cursor: pointer;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #669900;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
 }
 
 table{
@@ -68,14 +81,6 @@ ul{
 .container{
     display: flex;
     flex-direction: row;
-}
-
-.footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    background-color: #669900;
 }
 
 .justifyLeft{
@@ -104,10 +109,30 @@ ul{
     color: silver;
 }
 
-.nav{
+.portfolio{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
+
+.portfolio a {
+    background-color: #f8f8ff;
+    max-width: 20%;
+    margin: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 9px white;
+    cursor: pointer;
+    text-align: center;
+    max-width: 40%;
+    color: black
+}
+
+.portfolio img{
+    max-width: 95%;
+}
+
 
 .right img, video{
     max-height: 400px;
@@ -124,14 +149,14 @@ ul{
     line-height: 1.7;
 }
 
-.mx{
-    display: none;
-}
-
 .skills{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.skills div{
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 992px) {
@@ -151,13 +176,26 @@ ul{
         border: solid lightcyan 1px;
     }
 
-    .nav{
+    .container{
+        flex-direction: column;
+    }
+
+    .leftSidebar{
+        width: inherit;
+    }
+    #name-title {
+        display: none;
+    }
+
+
+    nav{
         flex-direction: row;
         flex-wrap: wrap;
-      
+        justify-content: space-around;
+        background-color: #669900;
     }
    
-    .nav a{
+    nav a{
         text-transform: uppercase;
         color: white;
         text-decoration: none;
@@ -166,16 +204,11 @@ ul{
         padding: 5px;
         font-size: 16px;
     }
-    
-    .leftSidebar{
-        display: none;
+
+    .portfolio h2{
+        font-size: 20px;
     }
 
-    .mx{
-        display: flex;
-        justify-content: space-around;
-        background-color: #669900;
-    }
 
     .right img, video{
         max-width: 100%;   
@@ -196,5 +229,9 @@ ul{
   
     .nav a{
         font-size: 14px;
+    }
+
+    .portfolio a{
+        max-width: 80%;
     }
 }
