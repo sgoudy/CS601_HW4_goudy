@@ -38,20 +38,20 @@
         <ol class="list">
             <li>
             <span>
-                Fill Me Out
+                Submit Contact Form
             </span>
-            <form id="form" >
+            <form id="form" method="POST" action="https://bucs601.com/submit.php">
                 <div>
-                    <h3>Contact Info</h3>
-                    <div>
+                    <h2>Contact Form</h2>
+                    <div id="firstNameDiv">
                         <label for="firstName">First Name:*</label><br>
                         <input type="text" name="firstName" id="firstName" required>
                     </div>
-                    <div>
+                    <div id="lastNameDiv">
                         <label for="lastName">Last Name:*</label><br>
                         <input type="text" name="lastName" id="lastName" required>
                     </div>
-                    <div>
+                    <div id="facDiv">
                         <label for="facilitator">Facilitator Name:*</label><br>
                         <input type="text" name="facilitator" id="facilitator" required>
                     </div>
@@ -74,6 +74,7 @@
                 </div>
                 <div >
                     <h3>Skill Set</h3>
+                    <h6>Job Seeker: Your Skills / Job Poster: Skills You Are Seeking for a Position</h6>
                     <div class="skillset">
                         <div>
                             <label for="front">Front-End</label>

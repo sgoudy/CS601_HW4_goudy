@@ -1,3 +1,37 @@
+// Created Error Handlers for 4 Types of Errors
+const fName = document.getElementById('firstName');
+const lName = document.getElementById('lastName');
+const fac = document.getElementById('facilitator');
+const firstError = document.createElement('div');
+const lastError = document.createElement('div');
+const facError = document.createElement('div');
+const typeError = document.createElement('div');
+
+// First Name min length = 2
+firstError.innerHTML = 'The first name must be at least 2 letters.';
+firstError.className = 'error';
+let fNameDiv = document.getElementById('firstNameDiv');
+fNameDiv.appendChild(firstError);
+
+// Last Name min length = 2
+lastError.innerHTML = 'The last name must be at least 2 letters.';
+lastError.className = 'error';
+let lNameDiv = document.getElementById('lastNameDiv');
+lNameDiv.appendChild(lastError);
+
+// Facilitator is in array below
+facError.innerHTML = 'Invalid facilitator entry, please try again.';
+facError.className = 'error';
+let facDiv = document.getElementById('facDiv');
+facDiv.appendChild(facError);
+
+// Names can only contain letters A-Z
+typeError.innerHTML = 'Names should only include the letters A-Z'
+typeError.className = 'error';
+facDiv.appendChild(typeError);
+
+
+/*********** Assignment 3 Reworked- Start **************/
 /**
  * Collects User name on button click, 
  * starts calculator
@@ -87,7 +121,8 @@ function rerun(){
     }
     alert("Thanks for playing!");
 }
-  
+/*********** Assignment 3 Reworked- End **************/
+
 
 /**
  * Menu Toggle in Mobile View
@@ -103,55 +138,81 @@ function toggleMenu(){
 
 
 /**
+ * Error Displays under Inputs
+ * @param {*} whichSection 
+ */
+function errorHandling(whichSection){
+ 
+    // First Name error
+    if (whichSection.id === 'firstName'){
+        firstError.style.display = 'block';
+        lastError.style.display = 'none';
+        facError.style.display = 'none';
+        typeError.style.display = 'none';
+    // Last name error
+    } else if (whichSection.id === 'lastName'){
+        firstError.style.display = 'none';
+        lastError.style.display = 'block';
+        facError.style.display = 'none';
+        typeError.style.display = 'none';
+    // Fac name error
+    } else if (whichSection.id === 'facilitator'){
+        firstError.style.display = 'none';
+        lastError.style.display = 'none';
+        facError.style.display = 'block';
+        typeError.style.display = 'none';
+    } else if (whichSection === 'type'){
+        firstError.style.display = 'none';
+        lastError.style.display = 'none';
+        facError.style.display = 'none';
+        typeError.style.display = 'block';
+    }
+}
+
+
+/**
  * Form Validation
- * @param {e} e 
- * @returns 
+ * @param {e} e form submission
+ * @returns false on error
  */
 function validateForm(e){
-    e.preventDefault();
-    const fName = document.getElementById('firstName');
-    const lName = document.getElementById('lastName');
-    const fac = document.getElementById('facilitator');
-    const ima = document.querySelector('input[name="status"]:checked');
-    const skills = document.querySelectorAll('.checkbox:checked');
+    // regex for alphabet characters only
     const regex = /^[A-Za-z]+$/;
 
+    // check length >= 2
     if (fName.value.length < 2 ){
-        alert('The first name must be at least 2 letters.')
+        e.preventDefault();
+        errorHandling(fName);
         return false;
     } 
     if (lName.value.length < 2){
-        alert('The last name must be at least 2 letters.')
+        e.preventDefault();
+        errorHandling(lName);
         return false;
-    }
-    if (!fName.value.match(regex) || !lName.value.match(regex)){
-        alert('The name fields should not contain anything but letters.')
-        return false;
-    }
-    
-    console.log(fName.value.length);    
-    console.log(lName.value);    
-    console.log(fac.value); 
-    console.log(ima.value);
-    if (skills.length > 0){
-        for (let i = 0; i<skills.length; i++){
-            console.log(skills[i].value)
-        }
-    } else {
-        console.log(skills.value);
     }
 
+    // check for any characters that don't match the regex
+    if (!fName.value.match(regex) || !lName.value.match(regex)){
+        e.preventDefault();
+        errorHandling('type')
+        return false;
+    }
+
+    // check for a valid facilitator name
     let match = false;
-    const facilitators = ['adam', 'christian', 'josh']
+    const facilitators = ['fazil', 'christian', 'josh', 'chris']
     for (let i = 0; i<facilitators.length; i++){
         if (fac.value.toLowerCase() === facilitators[i]){
+            facError.style.display = 'none';
             match = true;
         }
     }
+    // facilitator = no match 
     if (!match){
-        alert('Invalid facilitator entry, please try again.')
+        e.preventDefault();
+        errorHandling(fac);
+        return false;
     }
-
 }
 
 document.querySelector('form').addEventListener('submit', validateForm);
