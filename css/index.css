@@ -9,6 +9,25 @@ figcaption{
     font-size: 12px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: grey;
+    width: 70%;
+    color: white;
+}
+
+input{
+    width: 80%;
+    height: 30px;
+    margin: 10px
+}
+
 h1{
     color: gold;
     font-size: 35px;
@@ -18,11 +37,15 @@ h2{
     font-size: 28px;
 }
 
-p, a, button{
+p, a, button, span{
     font-size: 20px;
     text-decoration: none;
     color: lightgray;
     line-height: 1.7;
+}
+
+p{
+    padding: 10px;
 }
 
 nav > a, button, .resume {
@@ -81,6 +104,16 @@ ul{
 .container{
     display: flex;
     flex-direction: row;
+}
+
+button.menu  {
+    background-color: transparent;
+    display: none;
+    visibility: hidden;
+}
+
+#hamburger{
+    display: none;
 }
 
 .justifyLeft{
@@ -159,8 +192,31 @@ ul{
     margin: 0 auto;
 }
 
+.skillset, .ima{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.slide-in {
+    opacity:0;
+    transition:1s;
+  }
+  .active {
+    opacity:1;
+     transition: transform .5s;
+    -webkit-transition: transform .5s;
+    transform: translateX(0%);
+  
+  }
+
 @media screen and (max-width: 992px) {
 
+    form{
+        width: 80%;
+    }
+    
     table{
         margin: 2px;
         font-size: 12px;
@@ -227,8 +283,35 @@ ul{
 
 @media screen and (max-width: 414px) {
   
+    button.menu  {
+        background-color: transparent;
+        visibility: visible;
+        display: flex;
+        margin: auto;
+        padding: 5px;
+        border: none;
+    }
+
+    
+
+    nav{
+       display: none;
+        position: absolute;
+        top: 80px;
+        left: 25%;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+    }
+  
+    #hamburger{
+        display:block;
+        margin: auto;
+        position: relative;
+    } 
+
     .nav a{
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .portfolio a{

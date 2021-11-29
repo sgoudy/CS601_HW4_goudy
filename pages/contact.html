@@ -11,9 +11,13 @@
 <body>
   <section class="container">
     <header class="leftSidebar">
-        <a href="../index.html"><h1>Shelby 'EVA' Goudy</h1></a>
-        <h2>Contact</h2>  
-        <hr>
+        <div id="name-title">
+            <a href="../index.html"><h1>Shelby 'EVA' Goudy</h1></a>
+            <h2>Contact</h2>  
+            <hr>
+        </div>
+        <button id="hamburger" class="menu" onClick="toggleMenu()">
+            <img src="../images/Hamburger_icon.png" height="50" alt="hamburger menu icon" /></button>
       <nav>
         <a href="../index.html">Home</a>
         <a href="skills.html">Skills</a>
@@ -32,13 +36,78 @@
       <section  class="justifyLeft">
         <h4>In order of preference:</h4>
         <ol class="list">
+            <li>
+            <span>
+                Fill Me Out
+            </span>
+            <form id="form" >
+                <div>
+                    <h3>Contact Info</h3>
+                    <div>
+                        <label for="firstName">First Name:*</label><br>
+                        <input type="text" name="firstName" id="firstName" required>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name:*</label><br>
+                        <input type="text" name="lastName" id="lastName" required>
+                    </div>
+                    <div>
+                        <label for="facilitator">Facilitator Name:*</label><br>
+                        <input type="text" name="facilitator" id="facilitator" required>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>I'm a:</h3>
+                    <div class="ima">
+                        <div>
+                            <label for="seeker">Job Seeker</label>
+                            <input name="status" type="radio" id="seeker" value="job seeker" checked><br>
+                        </div>
+                       <div>
+                        <label for="poster">Job Poster</label>
+                        <input name="status" type="radio" id="poster" value="job poster">
+                       </div>
+                    </div>
+                    <hr>
+                    
+                </div>
+                <div >
+                    <h3>Skill Set</h3>
+                    <div class="skillset">
+                        <div>
+                            <label for="front">Front-End</label>
+                            <input class="checkbox" type="checkbox" id="front" value="front-end" name="front"><br>
+                        </div>
+                        <div>
+                            <label for="back">Back-End</label>
+                            <input class="checkbox" type="checkbox" id="back" value="back-end" name="back"><br>
+                        </div>
+                        <div>
+                            <label for="full">Full-Stack</label>
+                            <input class="checkbox" type="checkbox" id="full" value="full-stack" name="full"><br>
+                        </div>
+                        <div>
+                            <label for="software">Software</label>
+                            <input class="checkbox" type="checkbox" id="software" value="software" name="software"><br>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <br>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+                
+            </form>
+            </li>
           <li>
-            <a href="mailto:shelbygoudy@gmail.com">Email Me</a>
+            <a href="mailto:shelbygoudy@gmail.com"> Email Me</a>
           </li>
-          <li><a href="https://www.linkedin.com/in/shelby-goudy/" target="_blank">Connect with, or message, me on LinkedIn (see Footer)
+          <li><a href="https://www.linkedin.com/in/shelby-goudy/" target="_blank"> Connect with me on LinkedIn
         </a></li>
         <li>
-          <a href="tel:4432236514">Call, but leave a message because I won't answer the first time.</a>
+          <a href="tel:4432236514"> Call & leave a message!</a>
         </li>
         </ol>
       </section>
@@ -56,6 +125,6 @@
       </span>
       <p>&copy; Shelby 2021</p>
     </footer>
+    <script src="../script.js"></script>
 </body>
-
 </html> 
